@@ -31,6 +31,12 @@ python nvlink_eval.py
 [NVIDIA H20] Data Size per transfer: 1024 MB, Iterations: 100
 [NVIDIA H20] Host to Device (H2D) Bandwidth: 51.19 GB/s
 [NVIDIA H20] Device to Host (D2H) Bandwidth: 51.02 GB/s
+
+=== Multi-GPU NVLink/P2P Bandwidth Evaluation ===
+Found 2 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations: 100)...
+
+[NVIDIA H20 (GPU 0)] -> [NVIDIA H20 (GPU 1)] Bandwidth: 367.82 GB/s
+[NVIDIA H20 (GPU 1)] -> [NVIDIA H20 (GPU 0)] Bandwidth: 367.65 GB/s
 ```
 ### V100
 ```bash
