@@ -7,7 +7,7 @@ A PyTorch-based toolkit for evaluating GPU performance and bandwidth.
 1. **`flops_eval.py`**\
    Evaluates GPU TFLOPS across different precisions (FP32, FP16, BF16) using `torch.matmul`.
 2. **`bandwidth_eval.py`**\
-   Measures PCIe transfer speeds (Host-to-Device and Device-to-Host) using pinned memory.
+   Measures PCIe transfer speeds (Host-to-Device and Device-to-Host) using pinned memory, as well as GPU internal memory bandwidth (Device-to-Device).
 3. **`nvlink_eval.py`**\
    Tests pairwise P2P communication bandwidth between multiple GPUs (requires $\ge$ 2 GPUs).
 
@@ -27,10 +27,11 @@ python nvlink_eval.py
 [NVIDIA H20] \[torch.float16] Matrix Size: 8192x8192, TFLOPS: 142.10
 [NVIDIA H20] \[torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 139.3
 
-=== CPU-GPU Bandwidth Evaluation ===
+=== CPU-GPU & GPU-GPU Memory Bandwidth Evaluation ===
 [NVIDIA H20] Data Size per transfer: 1024 MB, Iterations: 100
-[NVIDIA H20] Host to Device (H2D) Bandwidth: 51.19 GB/s
-[NVIDIA H20] Device to Host (D2H) Bandwidth: 51.02 GB/s
+[NVIDIA H20] Host to Device (H2D) Bandwidth: 46.62 GB/s
+[NVIDIA H20] Device to Host (D2H) Bandwidth: 50.92 GB/s
+[NVIDIA H20] Device to Device (D2D) Bandwidth: 1949.40 GB/s
 
 === Multi-GPU NVLink/P2P Bandwidth Evaluation ===
 Found 2 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations: 100)...
@@ -45,7 +46,7 @@ Found 2 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations:
 [Tesla V100-SXM2-32GB] [torch.float16] Matrix Size: 8192x8192, TFLOPS: 93.16
 [Tesla V100-SXM2-32GB] [torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 10.22
 
-=== CPU-GPU Bandwidth Evaluation ===
+=== CPU-GPU & GPU-GPU Memory Bandwidth Evaluation ===
 [Tesla V100-SXM2-32GB] Data Size per transfer: 1024 MB, Iterations: 100
 [Tesla V100-SXM2-32GB] Host to Device (H2D) Bandwidth: 11.55 GB/s
 [Tesla V100-SXM2-32GB] Device to Host (D2H) Bandwidth: 12.27 GB/s
