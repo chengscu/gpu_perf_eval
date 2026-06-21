@@ -39,6 +39,25 @@ Found 2 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations:
 [NVIDIA H20 (GPU 0)] -> [NVIDIA H20 (GPU 1)] Bandwidth: 367.82 GB/s
 [NVIDIA H20 (GPU 1)] -> [NVIDIA H20 (GPU 0)] Bandwidth: 367.65 GB/s
 ```
+### A30
+```
+=== GPU FLOPS Evaluation ===
+[NVIDIA A30] [torch.float32] Matrix Size: 8192x8192, TFLOPS: 9.17
+[NVIDIA A30] [torch.float16] Matrix Size: 8192x8192, TFLOPS: 89.31
+[NVIDIA A30] [torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 114.33
+
+=== CPU-GPU & GPU-GPU Memory Bandwidth Evaluation ===
+[NVIDIA A30] Data Size per transfer: 1024 MB, Iterations: 100
+[NVIDIA A30] Host to Device (H2D) Bandwidth: 23.67 GB/s
+[NVIDIA A30] Device to Host (D2H) Bandwidth: 24.26 GB/s
+[NVIDIA A30] Device to Device (D2D) Bandwidth: 734.02 GB/s
+
+=== Multi-GPU NVLink/P2P Bandwidth Evaluation ===
+Found 2 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations: 100)...
+
+[NVIDIA A30 (GPU 0)] -> [NVIDIA A30 (GPU 1)] Bandwidth: 17.18 GB/s
+[NVIDIA A30 (GPU 1)] -> [NVIDIA A30 (GPU 0)] Bandwidth: 17.16 GB/s
+```
 ### V100
 ```bash
 === GPU FLOPS Evaluation ===
