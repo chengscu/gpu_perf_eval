@@ -67,8 +67,9 @@ Found 2 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations:
 
 === CPU-GPU & GPU-GPU Memory Bandwidth Evaluation ===
 [Tesla V100-SXM2-32GB] Data Size per transfer: 1024 MB, Iterations: 100
-[Tesla V100-SXM2-32GB] Host to Device (H2D) Bandwidth: 11.55 GB/s
-[Tesla V100-SXM2-32GB] Device to Host (D2H) Bandwidth: 12.27 GB/s
+[Tesla V100-SXM2-32GB] Host to Device (H2D) Bandwidth: 11.56 GB/s
+[Tesla V100-SXM2-32GB] Device to Host (D2H) Bandwidth: 12.26 GB/s
+[Tesla V100-SXM2-32GB] Device to Device (D2D) Bandwidth: 727.44 GB/s
 
 === Multi-GPU NVLink/P2P Bandwidth Evaluation ===
 Found 4 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations: 100)...
