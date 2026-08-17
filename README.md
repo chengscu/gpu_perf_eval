@@ -23,9 +23,17 @@ python nvlink_eval.py
 ### H20
 ```bash
 === GPU FLOPS Evaluation ===
-[NVIDIA H20] \[torch.float32] Matrix Size: 8192x8192, TFLOPS: 23.71
-[NVIDIA H20] \[torch.float16] Matrix Size: 8192x8192, TFLOPS: 142.10
-[NVIDIA H20] \[torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 139.3
+Device       : NVIDIA H20
+Capability   : (9, 0)
+Torch version: 2.6.0+cu124
+
+[NVIDIA H20] [torch.float32] Matrix Size: 8192x8192, TFLOPS: 24.15
+[NVIDIA H20] [torch.float16] Matrix Size: 8192x8192, TFLOPS: 142.08
+[NVIDIA H20] [torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 139.68
+[NVIDIA H20] [torch.float8_e4m3fn] Matrix Size: 8192x8192, TFLOPS: 281.01
+[NVIDIA H20] [torch.float8_e5m2 x torch.float8_e4m3fn] Matrix Size: 8192x8192, TFLOPS: 281.01
+[torch.float4_e2m1fn_x2] Skipped. Reason: dtype not exposed in this PyTorch version.
+[NVIDIA H20] [INT8 Tensor Core] Matrix Size: 8192x8192, TOPS: 56.07
 
 === CPU-GPU & GPU-GPU Memory Bandwidth Evaluation ===
 [NVIDIA H20] Data Size per transfer: 1024 MB, Iterations: 100
@@ -42,9 +50,17 @@ Found 2 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations:
 ### A30
 ```
 === GPU FLOPS Evaluation ===
-[NVIDIA A30] [torch.float32] Matrix Size: 8192x8192, TFLOPS: 9.17
-[NVIDIA A30] [torch.float16] Matrix Size: 8192x8192, TFLOPS: 89.31
-[NVIDIA A30] [torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 114.33
+Device       : NVIDIA A30
+Capability   : (8, 0)
+Torch version: 2.7.1+cu126
+
+[NVIDIA A30] [torch.float32] Matrix Size: 8192x8192, TFLOPS: 9.30
+[NVIDIA A30] [torch.float16] Matrix Size: 8192x8192, TFLOPS: 90.25
+[NVIDIA A30] [torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 115.61
+[torch.float8_e4m3fn] Skipped. Reason: compute capability (8, 0) < 8.9 (needs Ada/Hopper).
+[torch.float8_e5m2] Skipped. Reason: compute capability (8, 0) < 8.9 (needs Ada/Hopper).
+[torch.float4_e2m1fn_x2] Skipped. Reason: dtype not exposed in this PyTorch version.
+[NVIDIA A30] [INT8 Tensor Core] Matrix Size: 8192x8192, TOPS: 37.00
 
 === CPU-GPU & GPU-GPU Memory Bandwidth Evaluation ===
 [NVIDIA A30] Data Size per transfer: 1024 MB, Iterations: 100
@@ -61,9 +77,17 @@ Found 2 GPUs. Evaluating pairwise P2P bandwidth (Data Size: 1024 MB, Iterations:
 ### V100
 ```bash
 === GPU FLOPS Evaluation ===
-[Tesla V100-SXM2-32GB] [torch.float32] Matrix Size: 8192x8192, TFLOPS: 13.97
-[Tesla V100-SXM2-32GB] [torch.float16] Matrix Size: 8192x8192, TFLOPS: 93.16
-[Tesla V100-SXM2-32GB] [torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 10.22
+Device       : Tesla V100-SXM2-32GB
+Capability   : (7, 0)
+Torch version: 2.6.0+cu124
+
+[Tesla V100-SXM2-32GB] [torch.float32] Matrix Size: 8192x8192, TFLOPS: 13.87
+[Tesla V100-SXM2-32GB] [torch.float16] Matrix Size: 8192x8192, TFLOPS: 92.81
+[Tesla V100-SXM2-32GB] [torch.bfloat16] Matrix Size: 8192x8192, TFLOPS: 10.07
+[torch.float8_e4m3fn] Skipped. Reason: compute capability (7, 0) < 8.9 (needs Ada/Hopper).
+[torch.float8_e5m2] Skipped. Reason: compute capability (7, 0) < 8.9 (needs Ada/Hopper).
+[torch.float4_e2m1fn_x2] Skipped. Reason: dtype not exposed in this PyTorch version.
+[INT8 Tensor Core] Skipped. Reason: Tesla V100-SXM2-32GB compute capability (7, 0) is lower than 7.5.
 
 === CPU-GPU & GPU-GPU Memory Bandwidth Evaluation ===
 [Tesla V100-SXM2-32GB] Data Size per transfer: 1024 MB, Iterations: 100
